@@ -5,7 +5,7 @@ Username: `howie-guide`
 Password: `SushmitaHowie@123`
 
 ## Endpoints
-- `/materials/<filename>` - GET training PDF files
+- `/materials/<knowledge_base>` - GET training PDF files
 - `/query` - POST for querying Howie GPT
 
 ## Run Locally
