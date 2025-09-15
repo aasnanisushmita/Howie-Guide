@@ -4,7 +4,7 @@ import os
 import logging
 
 app = Flask(__name__)
-app.config['MATERIALS_FOLDER'] = './knowledge-base'
+app.config['knowledge_base'] = './knowledge_base'
 
 USERNAME = 'howie-guide'
 PASSWORD = 'SushmitaHowie@123'
