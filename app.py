@@ -4,7 +4,7 @@ import os
 import logging
 
 app = Flask(__name__)
-app.config['knowledge_base'] = './knowledge_base'
+app.config['MATERIALS_FOLDER'] = './knowledge_base'
 
 USERNAME = 'howie-guide'
 PASSWORD = 'SushmitaHowie@123'
@@ -29,11 +29,11 @@ logging.basicConfig(filename='howie_gpt.log', level=logging.INFO)
 @app.route('/materials/<filename>', methods=['GET'])
 @requires_auth
 def get_material(filename):
-    filepath = os.path.join(app.config['MATERIALS_FOLDER'], filename)
+    filepath = os.path.join(app.config['MATERIALS_FOLDER'], knowledge_base)
     if not os.path.isfile(filepath):
         return jsonify({'error': 'File not found'}), 404
 
-    logging.info(f"Material requested: {filename}")
+    logging.info(f"Material requested: {knowledge_base}")
     return Response(open(filepath, 'rb'), mimetype='application/pdf')
 
 @app.route('/query', methods=['POST'])
